@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <?php
-/* Template Name: thanks */
+/*
+Template Name: TempThanks
+*/
 ?>
 
 <main>

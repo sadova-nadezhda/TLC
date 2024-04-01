@@ -4,7 +4,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Главная</title>
+  <title><?php wp_title() ?></title>
   <?php wp_head(); ?>
 </head>
 
@@ -14,17 +14,18 @@
   <div class="container">
     <div class="header__container">
       <div class="header__secondary header__row">
-        <a href="#" class="header__logo logo">
+        <!-- <a href="#" class="header__logo logo">
           <img src="<?php echo bloginfo('template_url'); ?>/assets/img/logo.png" alt="logo">
-        </a>
+        </a> -->
+        <?php the_custom_logo(); ?>
         <div class="header__box">
           <!-- <select name="" id="" class="header__lang" onchange="window.location.href = this.value;">
             <option value="/" selected>Ru</option>
             <option value="/en/">En</option>
           </select> -->
           <?php echo do_shortcode( '[gtranslate]' ); ?>
-          <a class="header__mail" href="mailto:info@tlcgroup.kz">info@tlcgroup.kz</a>
-          <a class="header__tel" href="tel:+77071803222">+7 707 180 32 22</a>
+          <a class="header__mail" href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+          <a class="header__tel" href="tel:<?php the_field('phone_link'); ?>"><?php the_field('phone'); ?></a>
         </div>
       </div>
       <div class="header__main header__row">

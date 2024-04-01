@@ -613,15 +613,17 @@ textarea::placeholder {
 .trans__form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
   padding: 20px;
   padding-top: 16px;
   border-radius: 6px;
   background-color: #FCFCFC;
 }
 
-.trans__form input,
+.trans__form input:not([type='submit']),
 .trans__form select {
+  width: 100%;
+  margin-bottom: 20px;
   border: 0;
   color: #6E6E6E;
   background-color: #F7F7F7;
@@ -996,14 +998,22 @@ textarea::placeholder {
   gap: 14px;
 }
 
-.contacts__form {
+.contacts__form p {
   display: flex;
   flex-wrap: wrap;
   gap: 46px;
 }
 
-.contacts__item {
+.contacts__form input {
+  width: 100%;
+}
+
+.contacts__form span {
   flex: 1 1 300px;
+}
+
+.contacts__btn {
+  border: 1px solid var(--white, #FFFFFF);
 }
 
 
@@ -1285,6 +1295,11 @@ textarea::placeholder {
   .trans__img {
     width: 100%;
     margin: 0;
+  }
+
+  .trans__form input:not([type='submit']),
+  .trans__form select {
+    margin-bottom: 16px;
   }
 
   .services__title {
